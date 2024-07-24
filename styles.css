@@ -1,0 +1,333 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #00000013;
+    margin: 0;
+    padding: 0;
+}
+/* Custom Header Styling */
+header {
+    margin-bottom: 20px; 
+    padding: 20px;
+}
+
+.navbar-nav .nav-link {
+    margin-left: 15px;
+}
+.navbar{
+    padding: 30px;
+    background: #4b0082 !important;
+    box-shadow: 2px 2px 3px 1px black;
+}
+.navbar-brand {
+    font-size: 1.5rem; 
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem; 
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 10px;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    
+}
+
+header {
+    /* text-align: center; */
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #4b0082;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+
+
+.element {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.editor-area {
+    max-width: 100%;
+    width: 500px;
+    background-color: #e6e6fa !important;
+    border: 2px dashed #4b0082 !important;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.editor-area h3 {
+    margin-top: 0;
+}
+
+
+
+
+
+.editor-section {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.editor-section h3 {
+    margin-top: 0;
+    color: #000000;
+}
+
+.draggable-element {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+
+#main-editor-area, #secondary-editor-area {
+    max-width: 100%;
+    width: 600px;
+    min-height: 150px;
+    background-color: #e6e6fa !important;
+    border: 2px dashed #4b0082 !important;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#main-editor-area {
+    background-color: #fff;
+}
+
+#secondary-editor-area {
+    background-color: #e9ecef;
+}
+
+
+
+.quiz-option {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #000000b9;
+    border-radius: 5px;
+    text-align: left;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.quiz-option:hover {
+    background-color: #e2e6ea;
+    cursor: pointer;
+}
+
+.quiz-option.correct {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.quiz-option.incorrect {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+.quiz-container {
+    margin-bottom: 20px;
+}
+
+.quiz-page {
+    display: none;
+}
+
+.quiz-page.active {
+    display: block;
+}
+
+#prev-button {
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4b0082;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#prev-button:hover {
+    background-color: #020202;
+}
+
+#next-button {
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4b0082;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#next-button:hover {
+    background-color: #020202;
+}
+
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+#score {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#feedback {
+    font-size: 18px;
+    font-weight: bold;
+    color: #dc3545;
+    margin-top: 20px;
+}
+
+
+#restart-button {
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4b0082;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#restart-button:hover {
+    background-color: #020202;
+}
+
+
+
+
+.drag-container, .drop-container {
+    /* border: 1px solid #ccc; */
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px 1px rgb(231, 231, 231);
+}
+.pictorial-drop-target{
+    border: 2px dashed #4b0082 !important;
+    margin-bottom: 10px;
+}
+.pictorial-draggable, .pictorial-drop-target {
+    padding: 10px;
+    margin-bottom: 10px;
+
+    border: 1px solid #4b0082;
+    border-radius: 5px;
+    background-color: #efeff0 !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.pictorial-draggable img {
+    max-width: 100%;
+    object-fit: contain;
+    width: 400px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.pictorial-drop-target {
+    min-height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 1.2rem;
+}
+
+.pictorial-draggable.dragging {
+    opacity: 0.5;
+}
+
+.pictorial-drop-target.over {
+    background-color: #e6e6fa !important;
+}
+
+#pictorial-next-button, #pictorial-restart-button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4b0082;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Matching game styling */
+
+.matching-item, .matching-target {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.matching-item {
+    background-color: #f9f9f9;
+}
+
+.matching-target {
+    background-color: #e9e9e9;
+}
+
+.matching-item.dragging {
+    opacity: 0.5;
+}
+
+.matching-target.over {
+    border-color: #4b0082;
+    background-color: #d1ecf1;
+}
+
+#matching-check-button, #matching-restart-button{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4b0082;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}

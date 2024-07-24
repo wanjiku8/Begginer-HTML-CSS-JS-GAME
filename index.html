@@ -1,0 +1,665 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanjiku Web Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">Interactive Learning Games</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#matching-game">Matching Game</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#css-properties">Css Elements</a>
+                        </li>
+                        
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="#html-elements-container">HTML Elements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#quiss">Quick Fire Quiz</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+
+
+            <!-- <div class="box">
+                <div class="icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h2>Heading</h2>
+                <p>This is a paragraph inside the box.</p>
+            </div> -->
+
+<!-- <style>
+    .box {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 300px;
+    margin: auto;
+}
+
+.icon {
+    background-color: black;
+    color: white;
+    border-radius: 0%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -35px; 
+    left: calc(50% - 25px); 
+    font-size: 24px;
+}
+
+</style> -->
+
+<section id="matching-game" class="container">
+    <h2>Matching Game</h2>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div id="terms-container" class="drag-container">
+                <h3>Terms</h3>
+                <div class="matching-item" draggable="true" data-match="term1">HTML</div>
+                <div class="matching-item" draggable="true" data-match="term2">CSS</div>
+                <div class="matching-item" draggable="true" data-match="term3">JavaScript</div>
+                <div class="matching-item" draggable="true" data-match="term4">Bootstrap</div>
+                <div class="matching-item" draggable="true" data-match="term5">jQuery</div>
+                <div class="matching-item" draggable="true" data-match="term6">React</div>
+                <div class="matching-item" draggable="true" data-match="term7">Node.js</div>
+                <div class="matching-item" draggable="true" data-match="term8">Angular</div>
+                <div class="matching-item" draggable="true" data-match="term9">Sass</div>
+                <div class="matching-item" draggable="true" data-match="term10">TypeScript</div>
+                <div class="matching-item" draggable="true" data-match="term11">Vue.js</div>
+                <div class="matching-item" draggable="true" data-match="term12">PHP</div>
+                <!-- <button id="matching-check-button" class="btn btn-primary">Check Matches</button> -->
+                <!-- <button id="matching-restart-button" class="btn btn-secondary">Restart Game</button> -->
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div id="definitions-container" class="drop-container">
+                <h3>Definitions</h3>
+                <div class="matching-target" data-match="term1">HyperText Markup Language</div>
+                <div class="matching-target" data-match="term2">Cascading Style Sheets</div>
+                <div class="matching-target" data-match="term3">Programming Language for Web</div>
+                <div class="matching-target" data-match="term4">Front-end Framework</div>
+                <div class="matching-target" data-match="term5">JavaScript Library</div>
+                <div class="matching-target" data-match="term6">JavaScript Library for UI</div>
+                <div class="matching-target" data-match="term7">JavaScript Runtime Environment</div>
+                <div class="matching-target" data-match="term8">Front-end Framework by Google</div>
+                <div class="matching-target" data-match="term9">CSS Preprocessor</div>
+                <div class="matching-target" data-match="term10">JavaScript Superset</div>
+                <div class="matching-target" data-match="term11">Progressive Framework</div>
+                <div class="matching-target" data-match="term12">Server-Side Scripting Language</div>
+            </div>
+        </div>
+    </div>
+   
+</section>
+
+
+
+
+
+            <section id="quiz-section" class="hidden" >
+                <h2 class="mb-3">Quiz</h2>
+                <div id="quiz-content"></div>
+                
+            </section>
+
+            <section id="drag-drop-section" class="container mt-5">
+                <h2 class="mb-3">Css Elements</h2>
+                <div class="row editor">
+                  
+                    <div id="css-properties" class="col-md-2 elements">
+                        <div draggable="true" class="element" data-style="color">Color</div>
+                        <div draggable="true" class="element" data-style="font-size">Font Size</div>
+                        <div draggable="true" class="element" data-style="background-color">Background Color</div>
+                        <div draggable="true" class="element" data-style="font-family">Font Family</div>
+                        <div draggable="true" class="element" data-style="border">Border</div>
+                        
+                        
+                    </div>
+                    <div id="css-prperties" class="col-md-2 elements">
+                        <div draggable="true" class="element" data-style="margin">Margin</div>
+                        <div draggable="true" class="element" data-style="padding">Padding</div>
+                        <div draggable="true" class="element" data-style="width">Width</div>
+                        <!-- <div draggable="true" class="element" data-style="height">Height</div> -->
+                        <div draggable="true" class="element" data-style="text-align">Text Align</div>
+                        <div draggable="true" class="element" data-style="display">Display</div>
+                    </div>
+
+                    <div id="css-prperties" class="col-md-2 elements">
+                        
+                        <div draggable="true" class="element" data-style="position">Position</div>
+                        <div draggable="true" class="element" data-style="overflow">Overflow</div>
+                        <div draggable="true" class="element" data-style="opacity">Opacity</div>
+                        <div draggable="true" class="element" data-style="box-shadow">Box Shadow</div>
+                        <div draggable="true" class="element" data-style="border-radius">Border Radius</div>
+                    </div>
+                    <div id="editor-area" class="col-md-3 editor-area">
+                        <h3>Drop Here</h3>
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+    
+    <div class="main-container container">
+        <div class="row">
+        <div id="html-elements-container" class="editor-section col-md-6 mt-5">
+            <h3>HTML Elements</h3>
+            <div draggable="true" class="draggable-element" data-tag="h1">Heading One</div>
+            <div draggable="true" class="draggable-element" data-tag="h2">Heading Two</div>
+            <div draggable="true" class="draggable-element" data-tag="h3">Heading Three</div>
+            <div draggable="true" class="draggable-element" data-tag="h4">Heading Four</div>
+            <div draggable="true" class="draggable-element" data-tag="h5">Heading Five</div>
+            <div draggable="true" class="draggable-element" data-tag="p">Paragraph</div>
+            <div draggable="true" class="draggable-element" data-tag="a">Link</div>
+            <div draggable="true" class="draggable-element" data-tag="ul">List</div>
+            <div draggable="true" class="draggable-element" data-tag="li">List Item</div>
+            <div id="main-editor-area" class="col-md-6 mt-4">Editor Area</div>
+
+        </div>
+        
+        <div id="additional-html-elements-container" class="editor-section col-md-6 mt-5">
+            <h3>Additional HTML Elements</h3>
+            <div draggable="true" class="draggable-element" data-tag="h2">Subheading</div>
+            <div draggable="true" class="draggable-element" data-tag="span">Span</div>
+            <div draggable="true" class="draggable-element" data-tag="div">Div</div>
+            <div draggable="true" class="draggable-element" data-tag="strong">Strong</div>
+            <div draggable="true" class="draggable-element" data-tag="em">Emphasis</div>
+        <div id="secondary-editor-area" class="col-md-6 mt-4">Additional Editor Area</div>
+
+        </div>
+    </div>
+   
+    </div>
+    
+    
+        
+    
+
+    <section id="quiz-section" class="container">
+        <h2 id="quiss">Quiz</h2>
+        <div class="quiz-page active">
+
+        <div id="quiz-content" class="row">
+            <div class="col-md-4 mb-3">
+                <p>What does the <code>&lt;p&gt;</code> tag represent?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Paragraph</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Image</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Link</button>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <p>What does the <code>&lt;a&gt;</code> tag define?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Audio</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Anchor (Link)</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Article</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>What is the purpose of the <code>&lt;h1&gt;</code> tag?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Main Heading</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Horizontal Rule</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Highlight</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>Which tag is used for a line break?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;hr&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;br&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;lb&gt;</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>Which tag is used to define a table row?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;tr&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;td&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;th&gt;</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>What does the <code>&lt;em&gt;</code> tag stand for?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Example</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Emphasis</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Embed</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>Which tag is used to define a list item?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;li&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;ul&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;ol&gt;</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>What does the <code>&lt;ol&gt;</code> tag define?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Ordered List</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Offline List</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Object List</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>Which tag is used to define an image?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;im&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;img&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;image&gt;</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>What does the <code>&lt;div&gt;</code> tag define?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Division</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Device</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Divider</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>Which tag is used to define a form?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;form&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;input&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;button&gt;</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>What does the <code>&lt;ul&gt;</code> tag define?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Unordered List</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Uniform List</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Upload List</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>Which tag is used to define a hyperlink?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;hp&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;a&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;link&gt;</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>What does the <code>&lt;blockquote&gt;</code> tag define?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Block Quote</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Bold Quote</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Big Quote</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>Which tag is used for a horizontal line?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;hr&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;hl&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;line&gt;</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>Which tag is used to define a table cell?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;tr&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;th&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;td&gt;</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>What does the <code>&lt;thead&gt;</code> tag define?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Table Head</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Table Heading</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Table Header</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>Which tag is used to define an HTML document?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;doc&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;html&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;page&gt;</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>What does the <code>&lt;head&gt;</code> tag contain?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Metadata</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Body Content</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Headers</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <p>Which tag is used for the largest heading?</p>
+                <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;h1&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;h6&gt;</button>
+                <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;h4&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-page">
+        <div id="quiz-content" class="row">
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define a footer for a document or section?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;footer&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;foot&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;ftr&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>What does the <code>&lt;section&gt;</code> tag define?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Section</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Sector</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Segment</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define a block of navigation links?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;nav&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;navlinks&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;navigation&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>What does the <code>&lt;header&gt;</code> tag define?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Header</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Heading</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Head</button>
+    </div>
+
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>What does the <code>&lt;table&gt;</code> tag define?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Table</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Textbox</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Title</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define a table cell?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;td&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;tr&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;th&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>What is the purpose of the <code>&lt;head&gt;</code> tag?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Header Information</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Header</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Highlight</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define metadata?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;meta&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;med&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;met&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>What does the <code>&lt;link&gt;</code> tag define?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">External Resource Link</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Image</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Anchor</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define a script?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;script&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;scr&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;sc&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>What is the purpose of the <code>&lt;title&gt;</code> tag?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Document Title</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Text Title</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Page Title</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define a header cell in a table?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;th&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;td&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;tr&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>What does the <code>&lt;nav&gt;</code> tag define?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Navigation Links</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Navigation Bar</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Navigation Menu</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define an article?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;article&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;art&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;a&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define a section of the document?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;section&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;div&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;part&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define a figure caption?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;figcaption&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;caption&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;fig&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>What does the <code>&lt;iframe&gt;</code> tag define?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Inline Frame</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Inline Frame</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Inner Frame</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define a form control?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;input&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;formcontrol&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;control&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>What is the purpose of the <code>&lt;source&gt;</code> tag?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Media Source</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Source File</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Source Code</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to define a group of options in a dropdown list?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;optgroup&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;group&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;optiongroup&gt;</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>What does the <code>&lt;meta&gt;</code> tag define?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Metadata</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Media</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Meta Information</button>
+    </div>
+    <div class="col-md-6 col-lg-4 quiz-container">
+        <p>Which tag is used to include an external CSS file?</p>
+        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">&lt;link&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;style&gt;</button>
+        <button class="quiz-option" onclick="checkAnswer(this, 'incorrect')">&lt;css&gt;</button>
+    </div>
+    </div> 
+
+
+
+
+    <!-- Pictorial Drag-and-Drop Test Section -->
+<section id="pictorial-drag-drop-section" class="container">
+    <h2 class="mb-4">Pictorial Drag-and-Drop Test</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="pictorial-drag-container" class="drag-container">
+                <h3>Drag these images:</h3>
+                <div class="pictorial-draggable" draggable="true" data-tag="h1">
+                    <img src="./pic/h1.PNG" alt="Heading" class="pictorial-icon">
+                </div>
+                
+                <div class="pictorial-draggable" draggable="true" data-tag="a">
+                    <img src="./pic/link.PNG" alt="Link" class="pictorial-icon">
+                </div>
+
+                <div class="pictorial-draggable" draggable="true" data-tag="p">
+                    <img src="./pic/p.PNG" alt="Paragraph" class="pictorial-icon">
+                </div>
+
+                <!-- <button id="pictorial-next-button" class="btn btn-primary">Next Test</button> -->
+                <button id="pictorial-restart-button" class="btn btn-secondary">Restart Test</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="pictorial-drop-container" class="drop-container">
+                <h3>Drop items here:</h3>
+                <div class="pictorial-drop-target" data-tag="h1">
+                    <p>Drop Heading Here</p>
+                </div>
+                <div class="pictorial-drop-target" data-tag="p">
+                    <p>Drop Paragraph Here</p>
+                </div>
+                <div class="pictorial-drop-target" data-tag="a">
+                    <p>Drop Link Here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</section>
+
+    </div>
+
+
+    <div id="score" class="col-md-12 text-center mt-4">Score: <span id="score-count">0</span></div>
+    <div id="feedback" class="col-md-12 text-center"></div>
+
+
+    </section>
+
+
+    <div class="container my-4">
+        <button id="restart-button" class="quiz-navigation-button">Restart</button>
+        <button id="prev-button" class="btn btn-secondary">Back</button>
+        <button id="next-button" class="btn btn-primary">Next Page</button>
+        <div id="timer" class="col-md-12 text-center">Time left: <span id="timer-count">60</span> seconds</div>
+
+
+    </div>
+
+
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>&copy; 2024 Interactive Learning Games. All rights reserved.</p>
+        <p>
+            Designed with love by | Daisy Paul
+            
+        </p>
+    </footer>
+</div>
+    <script>
+        function checkAnswer(button, correctness) {
+            if (correctness === 'correct') {
+                button.style.backgroundColor = 'green';
+                alert('Correct!');
+            } else {
+                button.style.backgroundColor = 'red';
+                alert('Incorrect!');
+            }
+        }
+
+        document.getElementById('next-button').addEventListener('click', function() {
+            const activePage = document.querySelector('.quiz-page.active');
+            const nextPage = activePage.nextElementSibling;
+
+            if (nextPage && nextPage.classList.contains('quiz-page')) {
+                activePage.classList.remove('active');
+                nextPage.classList.add('active');
+            }
+        });
+
+        document.getElementById('prev-button').addEventListener('click', function() {
+    const activePage = document.querySelector('.quiz-page.active');
+    const prevPage = activePage.previousElementSibling;
+
+    if (prevPage && prevPage.classList.contains('quiz-page')) {
+        activePage.classList.remove('active');
+        prevPage.classList.add('active');
+    }
+});
+
+
+
+
+let timeLeft = 60; // Initial time
+let timerInterval;
+
+// Function to start or restart the timer
+function startTimer() {
+    clearInterval(timerInterval); // Clear any existing timer intervals
+    timeLeft = 60; 
+    document.getElementById('timer-count').textContent = timeLeft; // Update timer display
+    
+    timerInterval = setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            document.getElementById('timer-count').textContent = '0';
+            alert('Time is up!');
+            // Handle time up scenario here, e.g., move to the next page or end the quiz
+        } else {
+            document.getElementById('timer-count').textContent = timeLeft;
+            timeLeft -= 1;
+        }
+    }, 1000);
+}
+
+// Function to handle quiz restart
+function restartQuiz() {
+    // Reset the quiz pages to the first page
+    document.querySelectorAll('.quiz-page').forEach(page => page.classList.remove('active'));
+    const firstPage = document.querySelector('.quiz-page');
+    if (firstPage) {
+        firstPage.classList.add('active');
+    }
+
+    // Restart the timer
+    startTimer();
+}
+
+// Event listener for the next button
+document.getElementById('next-button').addEventListener('click', function() {
+    const activePage = document.querySelector('.quiz-page.active');
+    const nextPage = activePage.nextElementSibling;
+
+    if (nextPage && nextPage.classList.contains('quiz-page')) {
+        activePage.classList.remove('active');
+        nextPage.classList.add('active');
+        startTimer(); // Restart timer when moving to the next page
+    }
+});
+
+// Event listener for the restart button
+document.getElementById('restart-button').addEventListener('click', function() {
+    restartQuiz(); // Restart the quiz and timer
+});
+
+// start the timer on page load or when the first quiz page is active
+document.addEventListener('DOMContentLoaded', () => {
+    const initialPage = document.querySelector('.quiz-page.active') || document.querySelector('.quiz-page');
+    if (initialPage) {
+        startTimer(); // Start timer on initial page load
+    }
+});
+
+
+document.getElementById('restart-button').addEventListener('click', function() {
+    timeLeft = 60;
+    score = 0;
+    document.getElementById('score-count').textContent = score;
+    document.getElementById('timer-count').textContent = timeLeft;
+    document.getElementById('feedback').textContent = '';
+
+    const pages = document.querySelectorAll('.quiz-page');
+    pages.forEach(page => page.classList.remove('active'));
+    pages[0].classList.add('active'); // Show the first page
+});
+
+
+
+    </script>
+
+
+ <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> -->
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
